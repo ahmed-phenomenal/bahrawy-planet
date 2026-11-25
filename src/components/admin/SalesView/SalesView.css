@@ -1,0 +1,103 @@
+.sales-block {
+  margin-bottom: 24px;
+}
+
+.sales-note {
+  margin: -8px 0 16px;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.sales-error {
+  margin: 0 0 12px;
+  font-weight: 600;
+  color: var(--color-red);
+}
+
+.sales-table {
+  min-width: 1000px;
+}
+
+.sales-table small {
+  color: var(--color-muted);
+}
+
+.sales-empty {
+  text-align: center;
+  color: var(--color-muted);
+}
+
+.sales-delete {
+  display: flex;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  color: var(--color-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.sales-delete:hover {
+  color: var(--color-red);
+  background: color-mix(in srgb, var(--color-red) 12%, transparent);
+}
+
+/* ---------- Filters: big search input + On the spot / Delivery tabs ---------- */
+.sales-filters {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.sales-search {
+  position: relative;
+}
+
+.sales-search svg {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  color: var(--color-muted);
+  pointer-events: none;
+}
+
+.sales-search .adm-input {
+  padding: 18px 18px 18px 52px;
+  font-size: 1.05rem;
+  border-radius: 14px;
+}
+
+.sales-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sales-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.sales-tab:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.sales-tab.active {
+  color: #fff;
+  background: var(--gradient-brand);
+  border-color: transparent;
+}

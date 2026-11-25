@@ -1,0 +1,91 @@
+/* ---------- Language switch button (in the Navbar) ---------- */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  min-width: 48px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font-family: var(--font-cairo), var(--font-inter), system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.lang-switch:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* ---------- Arabic: right-to-left + Arabic font ---------- */
+.site-root[dir="rtl"] {
+  font-family: var(--font-cairo), var(--font-inter), system-ui, sans-serif;
+  --font-playfair: var(--font-cairo);
+}
+
+.site-root[dir="rtl"] button,
+.site-root[dir="rtl"] input,
+.site-root[dir="rtl"] textarea {
+  font-family: inherit;
+}
+
+/* Navbar link underline sweeps the other way */
+.site-root[dir="rtl"] .navbar-link::after {
+  transform-origin: left;
+}
+
+.site-root[dir="rtl"] .navbar-link:hover::after,
+.site-root[dir="rtl"] .navbar-link.active::after {
+  transform-origin: right;
+}
+
+/* Mobile menu opens from the right side */
+@media (max-width: 768px) {
+  .site-root[dir="rtl"] .navbar-links {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .site-root[dir="rtl"] .navbar-links.open {
+    transform: translateX(0);
+  }
+}
+
+/* Books */
+.site-root[dir="rtl"] .books-dropdown-item {
+  text-align: right;
+}
+
+.site-root[dir="rtl"] .card-category {
+  left: auto;
+  right: 12px;
+}
+
+.site-root[dir="rtl"] .card-body,
+.site-root[dir="rtl"] .detail-text,
+.site-root[dir="rtl"] .about-text {
+  text-align: right;
+}
+
+/* Arrows point the other way */
+.site-root[dir="rtl"] .card-more svg,
+.site-root[dir="rtl"] .detail-back svg {
+  transform: scaleX(-1);
+}
+
+.site-root[dir="rtl"] .detail-back:hover {
+  transform: translateX(4px) scale(1.06);
+}
+
+/* Footer */
+.site-root[dir="rtl"] .footer-heading::after {
+  left: auto;
+  right: 0;
+}

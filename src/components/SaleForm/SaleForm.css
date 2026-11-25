@@ -1,0 +1,193 @@
+.sf-card {
+  margin-bottom: 24px;
+}
+
+/* ---------- Books table ---------- */
+.sf-search {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.sf-search svg {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: var(--color-muted);
+  pointer-events: none;
+}
+
+.sf-search .adm-input {
+  padding-left: 42px;
+}
+
+.sf-table-scroll {
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.sf-table {
+  min-width: 560px;
+}
+
+.sf-table small {
+  color: var(--color-muted);
+}
+
+.sf-empty {
+  text-align: center;
+  color: var(--color-muted);
+}
+
+.sf-row-selected {
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+}
+
+.sf-sell {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
+
+/* ---------- Form ---------- */
+.sf-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.sf-full {
+  grid-column: 1 / -1;
+}
+
+.sf-selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 6px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  border: 1px solid var(--color-accent);
+}
+
+.sf-selected > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--color-text);
+}
+
+.sf-selected small {
+  color: var(--color-muted);
+}
+
+.sf-clear {
+  display: flex;
+  padding: 6px;
+  border: none;
+  border-radius: 8px;
+  color: var(--color-muted);
+  background: transparent;
+  cursor: pointer;
+}
+
+.sf-clear:hover {
+  color: var(--color-red);
+}
+
+.sf-placeholder {
+  margin: 6px 0 0;
+  color: var(--color-muted);
+}
+
+.sf-channels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.sf-channel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.sf-channel:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.sf-channel.active {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+}
+
+.sf-summary {
+  display: grid;
+  gap: 10px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+
+.sf-summary > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--color-muted);
+}
+
+.sf-summary strong {
+  color: var(--color-text);
+}
+
+.sf-summary .sf-total {
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border);
+  font-size: 1.1rem;
+}
+
+.sf-summary .sf-total strong {
+  color: var(--color-primary);
+}
+
+.sf-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.sf-message {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.sf-message.ok {
+  color: #16a34a;
+}
+
+.sf-message.error {
+  color: var(--color-red);
+}
+
+@media (max-width: 560px) {
+  .sf-form {
+    grid-template-columns: 1fr;
+  }
+}

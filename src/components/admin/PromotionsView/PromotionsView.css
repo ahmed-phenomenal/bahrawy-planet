@@ -1,0 +1,163 @@
+.promo-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ---------- Tabs ---------- */
+.promo-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.promo-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.promo-tab:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.promo-tab.active {
+  color: #fff;
+  background: var(--gradient-brand);
+  border-color: transparent;
+}
+
+/* ---------- Form ---------- */
+.promo-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.promo-full {
+  grid-column: 1 / -1;
+}
+
+.promo-cover {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  color: var(--color-muted);
+  background: var(--color-bg);
+  border: 2px dashed var(--color-border);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.promo-cover:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.promo-cover span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.promo-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.promo-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.promo-notice {
+  font-weight: 600;
+  color: #16a34a;
+}
+
+/* ---------- Recently added ---------- */
+.promo-list {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.promo-list li {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+
+.promo-list h3 {
+  margin: 10px 0 4px;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.promo-list p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+.promo-delete {
+  display: flex;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  color: var(--color-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.promo-delete:hover {
+  color: var(--color-red);
+  background: color-mix(in srgb, var(--color-red) 12%, transparent);
+}
+
+.promo-empty {
+  color: var(--color-muted);
+}
+
+@media (max-width: 1100px) {
+  .promo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .promo-form {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,428 @@
+/* ---------- Header ---------- */
+.stk-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.stk-refresh {
+  padding: 10px 18px;
+}
+
+.stk-spin {
+  animation: stk-rotate 0.8s linear infinite;
+}
+
+@keyframes stk-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stk-error {
+  font-weight: 600;
+  color: var(--color-red);
+}
+
+/* ---------- Summary cards ---------- */
+.stk-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.stk-stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stk-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  color: #fff;
+  background: var(--gradient-primary);
+}
+
+.stk-stat:nth-child(even) .stk-stat-icon {
+  background: var(--gradient-brand);
+}
+
+.stk-stat-label {
+  margin: 0 0 4px;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.stk-stat-value {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.stk-stat-value.plus {
+  color: #16a34a;
+}
+
+.stk-stat-value.minus {
+  color: var(--color-red);
+}
+
+/* ---------- Profit card ---------- */
+.stk-profit {
+  margin-bottom: 20px;
+  border-left: 6px solid #16a34a;
+}
+
+.stk-profit.loss {
+  border-left-color: var(--color-red);
+}
+
+.stk-profit-top {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.stk-profit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  color: #fff;
+  background: #16a34a;
+}
+
+.stk-profit.loss .stk-profit-icon {
+  background: var(--color-red);
+}
+
+.stk-profit-value {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #16a34a;
+}
+
+.stk-profit.loss .stk-profit-value {
+  color: var(--color-red);
+}
+
+.stk-profit-formula {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.stk-progress-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.stk-progress-head strong {
+  color: var(--color-text);
+}
+
+.stk-progress-track {
+  height: 14px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+
+.stk-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--gradient-brand);
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stk-profit.gain .stk-progress-fill {
+  background: #16a34a;
+}
+
+/* ---------- Money movements ---------- */
+.stk-moves-card {
+  margin-bottom: 20px;
+}
+
+.stk-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px 0 2px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.stk-dot.plus {
+  background: #16a34a;
+}
+
+.stk-dot.minus {
+  background: var(--color-red);
+}
+
+.stk-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.stk-tab {
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.stk-tab:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.stk-tab.active {
+  color: #fff;
+  background: var(--gradient-brand);
+  border-color: transparent;
+}
+
+.stk-moves {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: opacity 0.2s ease;
+}
+
+.stk-moves.loading {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.stk-moves li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-left-width: 5px;
+}
+
+.stk-moves li.plus {
+  border-left-color: #16a34a;
+}
+
+.stk-moves li.minus {
+  border-left-color: var(--color-red);
+}
+
+.stk-move-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.stk-moves li.plus .stk-move-icon {
+  background: #16a34a;
+}
+
+.stk-moves li.minus .stk-move-icon {
+  background: var(--color-red);
+}
+
+.stk-move-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.stk-move-text h4 {
+  margin: 0 0 2px;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.stk-move-text span {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.stk-move-amount {
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.stk-moves li.plus .stk-move-amount {
+  color: #16a34a;
+}
+
+.stk-moves li.minus .stk-move-amount {
+  color: var(--color-red);
+}
+
+.stk-pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.stk-pager-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+}
+
+.stk-pager-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.stk-pager-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.stk-pager-info small {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+/* ---------- Layout ---------- */
+.stk-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.stk-hint {
+  margin: -6px 0 18px;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--color-muted);
+}
+
+.stk-empty {
+  text-align: center;
+  color: var(--color-muted);
+}
+
+/* ---------- Expense form ---------- */
+.stk-form {
+  display: grid;
+  gap: 16px;
+}
+
+.stk-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.stk-form .adm-btn {
+  justify-self: start;
+}
+
+.stk-notice {
+  margin: 0;
+  font-weight: 600;
+  color: #16a34a;
+}
+
+.stk-notice.error {
+  color: var(--color-red);
+}
+
+.stk-list-end {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.stk-delete {
+  display: flex;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  color: var(--color-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.stk-delete:hover {
+  color: var(--color-red);
+  background: color-mix(in srgb, var(--color-red) 12%, transparent);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .stk-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stk-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .stk-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stk-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .stk-profit-value {
+    font-size: 1.8rem;
+  }
+
+  .stk-moves li {
+    flex-wrap: wrap;
+  }
+}

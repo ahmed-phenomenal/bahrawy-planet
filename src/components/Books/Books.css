@@ -1,0 +1,268 @@
+.books {
+  padding: 96px 0;
+}
+
+.books-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.books-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.books-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 40%, transparent);
+}
+
+.books-title {
+  margin: 0 0 14px;
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.books-highlight {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.books-subtitle {
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+/* Keeps the dropdown menu above the cards below it */
+.books-filter {
+  position: relative;
+  z-index: 20;
+  margin-bottom: 48px;
+}
+
+/* ---------- Category tabs (desktop) ---------- */
+.books-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.books-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.books-tab:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.books-tab.active {
+  color: #fff;
+  background: var(--gradient-brand);
+  border-color: transparent;
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--color-accent) 40%, transparent);
+}
+
+.books-tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 14%, transparent);
+}
+
+.books-tab.active .books-tab-count {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ---------- Dropdown (hidden on desktop) ---------- */
+.books-dropdown {
+  display: none;
+  position: relative;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.books-dropdown-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.books-dropdown-button.open {
+  border-color: var(--color-accent);
+}
+
+.books-dropdown-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.books-dropdown-arrow {
+  color: var(--color-accent);
+  transition: transform 0.3s ease;
+}
+
+.books-dropdown-button.open .books-dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.books-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  border-radius: 14px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+.books-dropdown-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.books-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: left;
+  color: var(--color-text);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.books-dropdown-item:hover {
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  color: var(--color-accent);
+}
+
+.books-dropdown-item.active {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.books-dropdown-item-end {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---------- Grid (cards are centered even if there are only 2) ---------- */
+.books-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+}
+
+.books-item {
+  width: calc((100% - 84px) / 4);
+}
+
+.books-item .reveal-inner {
+  height: 100%;
+}
+
+@media (max-width: 1100px) {
+  .books-item {
+    width: calc((100% - 56px) / 3);
+  }
+}
+
+/* Tablet / mobile: tabs become a dropdown */
+@media (max-width: 800px) {
+  .books-tabs {
+    display: none;
+  }
+
+  .books-dropdown {
+    display: block;
+  }
+
+  .books-grid {
+    gap: 20px;
+  }
+
+  .books-item {
+    width: calc((100% - 20px) / 2);
+  }
+}
+
+@media (max-width: 560px) {
+  .books {
+    padding: 64px 0;
+  }
+
+  .books-filter {
+    margin-bottom: 36px;
+  }
+
+  .books-item {
+    width: 100%;
+  }
+}

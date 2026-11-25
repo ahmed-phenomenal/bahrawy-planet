@@ -1,0 +1,81 @@
+.sch-section {
+  margin-bottom: 24px;
+}
+
+.sch-time {
+  width: 140px;
+  padding: 8px 10px;
+}
+
+.sch-time:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.sch-check {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-red);
+  cursor: pointer;
+}
+
+.sch-wide {
+  min-width: 980px;
+}
+
+.sch-shift {
+  min-width: 128px;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+}
+
+.sch-shift.off {
+  color: var(--color-muted);
+  background: transparent;
+}
+
+.sch-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.sch-saved {
+  font-weight: 600;
+  color: #16a34a;
+}
+.sch-shift.morning {
+  color: #16a34a;
+  border-color: color-mix(in srgb, #16a34a 45%, transparent);
+  background: color-mix(in srgb, #16a34a 10%, transparent);
+}
+
+.sch-shift.night {
+  color: var(--color-primary);
+  border-color: color-mix(in srgb, var(--color-primary) 45%, transparent);
+  background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+.sch-shift.noshow {
+  color: var(--color-red);
+  border-color: color-mix(in srgb, var(--color-red) 45%, transparent);
+  background: color-mix(in srgb, var(--color-red) 10%, transparent);
+}
+
+.sch-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  margin: -6px 0 20px;
+}
+
+.sch-legend > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sch-legend small {
+  color: var(--color-muted);
+}

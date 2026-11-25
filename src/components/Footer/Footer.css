@@ -1,0 +1,214 @@
+.footer {
+  position: relative;
+  margin-top: 40px;
+  color: #cbd5e1;
+  background: #0f172a;
+}
+
+:root[data-theme="dark"] .footer {
+  background: #060b16;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Gradient line on top */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-brand);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 72px 24px 28px;
+}
+
+/* Brand, contact and opening hours */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  align-items: start;
+  gap: 48px;
+}
+
+/* ---------- Brand ---------- */
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  text-decoration: none;
+}
+
+.footer-logo img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-logo span {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.footer-about {
+  max-width: 380px;
+  margin: 0 0 24px;
+  line-height: 1.8;
+  color: #94a3b8;
+}
+
+/* ---------- Socials ---------- */
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.3s ease, background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.footer-social:hover {
+  transform: translateY(-4px);
+  background: var(--gradient-brand);
+  border-color: transparent;
+}
+
+/* ---------- Contact and hours boxes ---------- */
+.footer-contact-box,
+.footer-hours-box {
+  width: 100%;
+  max-width: 340px;
+}
+
+.footer-heading {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 24px;
+  padding-bottom: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.footer-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--gradient-brand);
+}
+
+.footer-list {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #94a3b8;
+}
+
+.footer-contact svg {
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+/* ---------- Opening hours ---------- */
+.footer-hours {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-hours-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.92rem;
+  color: #94a3b8;
+}
+
+.footer-hours-row span:first-child {
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.footer-closed {
+  color: #f87171;
+  font-weight: 600;
+}
+
+/* ---------- Bottom bar ---------- */
+.footer-bottom {
+  margin-top: 56px;
+  padding-top: 24px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1000px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid > :first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 800px) {
+  .footer-inner {
+    padding: 56px 24px 24px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-contact-box,
+  .footer-hours-box {
+    max-width: none;
+  }
+
+  .footer-bottom {
+    margin-top: 40px;
+  }
+}

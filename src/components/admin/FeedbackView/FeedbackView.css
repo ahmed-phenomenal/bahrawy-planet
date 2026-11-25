@@ -1,0 +1,140 @@
+.afb-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.afb-note {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.afb-refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.afb-refresh:hover:not(:disabled) {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.afb-refresh:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.afb-spin {
+  animation: afbSpin 1s linear infinite;
+}
+
+@keyframes afbSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.afb-error {
+  margin: 0 0 20px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  color: var(--color-red);
+  background: color-mix(in srgb, var(--color-red) 12%, transparent);
+}
+
+.afb-empty {
+  text-align: center;
+  color: var(--color-muted);
+}
+
+.afb-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.afb-card p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--color-muted);
+  overflow-wrap: anywhere;
+}
+
+.afb-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.afb-head h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.afb-date {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.afb-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-weight: 700;
+  color: #fff;
+  background: var(--gradient-brand);
+}
+
+.afb-delete {
+  margin-left: auto;
+  display: flex;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  color: var(--color-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.afb-delete:hover {
+  color: var(--color-red);
+  background: color-mix(in srgb, var(--color-red) 12%, transparent);
+}
+
+.afb-stars {
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  color: var(--color-accent);
+}
+
+.afb-stars span {
+  color: var(--color-border);
+}
+
+@media (max-width: 800px) {
+  .afb-grid {
+    grid-template-columns: 1fr;
+  }
+}

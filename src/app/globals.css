@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+/* ---------- Light theme: sky blue with white stars ---------- */
+:root {
+  --color-primary: #0ea5e9;
+  --color-primary-dark: #0284c7;
+  --color-accent: #f97316;
+  --color-red: #ef4444;
+
+  --color-bg: #cdeafb;
+  --color-surface: #ffffff;
+  --color-text: #0b2540;
+  --color-muted: #2b4863;
+  --color-border: #b5dcf3;
+
+  --gradient-brand: linear-gradient(135deg, #0ea5e9, #0369a1);
+  --gradient-primary: linear-gradient(135deg, #0ea5e9, #0284c7);
+
+  --shadow-sm: 0 2px 12px rgba(2, 132, 199, 0.12);
+  --shadow-md: 0 12px 32px rgba(2, 132, 199, 0.18);
+
+  --navbar-height: 72px;
+}
+
+/* ---------- Dark theme: space ---------- */
+:root[data-theme="dark"] {
+  --color-primary: #38bdf8;
+  --color-primary-dark: #0ea5e9;
+  --color-accent: #fbbf24;
+  --color-red: #f87171;
+
+  --color-bg: #040814;
+  --color-surface: rgba(10, 20, 48, 0.82);
+  --color-text: #e8f1ff;
+  --color-muted: #9db2d3;
+  --color-border: rgba(125, 175, 255, 0.2);
+
+  --gradient-brand: linear-gradient(135deg, #38bdf8, #818cf8 60%, #c084fc);
+  --gradient-primary: linear-gradient(135deg, #0ea5e9, #4f46e5);
+
+  --shadow-sm: 0 2px 14px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 14px 40px rgba(0, 0, 0, 0.55), 0 0 30px rgba(56, 189, 248, 0.08);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 64px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--navbar-height);
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: clip;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+main {
+  padding-top: var(--navbar-height);
+  min-height: 100vh;
+}
+
+/* Title in the hero stays light because the photo behind it is dark */
+.hero .hero-highlight {
+  background: linear-gradient(135deg, #7dd3fc, #38bdf8 50%, #a5b4fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Let the stars show through the admin, employee and login pages ---------- */
+:root .adm-root,
+:root .emp-root,
+:root .login-page {
+  background: transparent;
+}
+
+:root[data-theme="dark"] .navbar,
+:root[data-theme="dark"] .adm-topbar,
+:root[data-theme="dark"] .emp-topbar,
+:root[data-theme="dark"] .adm-sidebar {
+  background: rgba(5, 10, 28, 0.94);
+}
+
+:root[data-theme="dark"] .books-dropdown-menu {
+  background: #08122e;
+}
+
+@media (max-width: 768px) {
+  :root[data-theme="dark"] .navbar-links {
+    background: #08122e;
+  }
+}
+
+/* The logo keeps its original colors in both light and dark mode (no filter) */
+
+/* Hide the Next.js dev indicator completely */
+nextjs-portal {
+  display: none !important;
+}

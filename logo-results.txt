@@ -1,0 +1,43 @@
+src\app\api\admin\logout\route.ts:9:    await fetch(`${API_URL}/logout`, {
+src\app\globals.css:106:/* The logo is black line art: turn it white where the background is dark */
+src\app\globals.css:107::root[data-theme="dark"] .navbar-logo img,
+src\app\globals.css:110::root[data-theme="dark"] .login-logo img,
+src\app\globals.css:111:.footer-logo img {
+src\components\admin\AdminLogin\AdminLogin.css:43:.login-logo img {
+src\components\admin\AdminLogin\AdminLogin.tsx:51:        <div className="login-logo">
+src\components\admin\AdminLogin\AdminLogin.tsx:52:          <Image src="/logo.png" alt="Logo" width={64} height={64} priority />
+src\components\admin\AdminShell\AdminShell.css:59:.adm-logout {
+src\components\admin\AdminShell\AdminShell.css:75:.adm-logout:hover {
+src\components\admin\AdminShell\AdminShell.css:145:  .adm-logout span {
+src\components\admin\AdminShell\AdminShell.tsx:11:  LogOut,
+src\components\admin\AdminShell\AdminShell.tsx:44:  const logout = async () => {
+src\components\admin\AdminShell\AdminShell.tsx:45:    await fetch("/api/admin/logout", { method: "POST" }).catch(() => {});
+src\components\admin\AdminShell\AdminShell.tsx:61:            <Image src="/logo.png" alt="Logo" width={36} height={36} />
+src\components\admin\AdminShell\AdminShell.tsx:68:          <button className="adm-logout" onClick={logout}>
+src\components\admin\AdminShell\AdminShell.tsx:69:            <LogOut size={18} />
+src\components\admin\AdminShell\AdminShell.tsx:70:            <span>Logout</span>
+src\components\employee\EmployeePanel\EmployeePanel.css:60:.emp-logout {
+src\components\employee\EmployeePanel\EmployeePanel.css:76:.emp-logout:hover {
+src\components\employee\EmployeePanel\EmployeePanel.css:238:  .emp-logout span {
+src\components\employee\EmployeePanel\EmployeePanel.tsx:6:import { CalendarCheck, LogIn, LogOut, ShoppingCart } from "lucide-react";
+src\components\employee\EmployeePanel\EmployeePanel.tsx:72:  const logout = async () => {
+src\components\employee\EmployeePanel\EmployeePanel.tsx:73:    await fetch("/api/admin/logout", { method: "POST" }).catch(() => {});
+src\components\employee\EmployeePanel\EmployeePanel.tsx:101:        <Image src="/logo.png" alt="Logo" width={36} height={36} />
+src\components\employee\EmployeePanel\EmployeePanel.tsx:112:        <button className="emp-logout" onClick={logout}>
+src\components\employee\EmployeePanel\EmployeePanel.tsx:113:          <LogOut size={18} />
+src\components\employee\EmployeePanel\EmployeePanel.tsx:114:          <span>Logout</span>
+src\components\employee\EmployeePanel\EmployeePanel.tsx:219:                  <LogOut size={18} />
+src\components\Footer\Footer.css:39:.footer-logo {
+src\components\Footer\Footer.css:47:.footer-logo img {
+src\components\Footer\Footer.css:53:.footer-logo span {
+src\components\Footer\Footer.tsx:73:              <SectionLink section="home" className="footer-logo">
+src\components\Footer\Footer.tsx:75:                  src="/logo.png"
+src\components\Footer\Footer.tsx:76:                  alt="Bahrawy Planet logo"
+src\components\Navbar\Navbar.css:24:/* ---------- Logo + name ---------- */
+src\components\Navbar\Navbar.css:25:.navbar-logo {
+src\components\Navbar\Navbar.css:32:.navbar-logo img {
+src\components\Navbar\Navbar.css:39:.navbar-logo:hover img {
+src\components\Navbar\Navbar.css:117:  .navbar-logo img {
+src\components\Navbar\Navbar.tsx:81:          className="navbar-logo"
+src\components\Navbar\Navbar.tsx:85:            src="/logo.png"
+src\components\Navbar\Navbar.tsx:86:            alt="Bahrawy Planet logo"
