@@ -1,4 +1,4 @@
-/* The picture covers the whole screen (laptop and mobile) */
+/* Laptop: the picture covers the whole screen */
 .nf {
   position: fixed;
   inset: 0;
@@ -46,4 +46,16 @@
 .nf-button:hover {
   filter: brightness(1.1);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+}
+
+/* Portrait screens (phones): show the WHOLE picture, nothing is cut */
+@media (max-aspect-ratio: 1/1), (max-width: 700px) {
+  .nf-image {
+    object-fit: contain;
+    object-position: center 40%;
+  }
+
+  .nf-button {
+    bottom: max(28px, 8vh);
+  }
 }
