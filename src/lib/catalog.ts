@@ -1,17 +1,9 @@
 import { API_URL } from "@/lib/auth";
 import type { Book } from "@/data/books";
 
-// Only localhost may use http. On the internet everything must be https,
-// because an https page (Vercel) blocks images that come from http.
-const isLocal = (url: string) =>
-  /^https?:\/\/(127\.0\.0\.1|localhost)(:|\/|$)/.test(url);
-
-const secure = (url: string) =>
-  isLocal(url) ? url : url.replace(/^http:\/\//, "https://");
-
-// https://bahrawy-planet.runasp.net/storage/   (or http://127.0.0.1:8000/storage/ locally)
-const STORAGE_URL =
-  secure(API_URL.replace(/\/api\/?$/, "")) + "/storage/";
+// Covers are served through this site (/files/...), so the browser never
+// talks to the backend directly and never meets http/https problems.
+const FILES_URL = "/files/";
 
 export type Group = { id: string; label: string; categories: string[] };
 
@@ -58,14 +50,14 @@ async function get<T>(path: string): Promise<T | null> {
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Works whether Laravel sends cover_path ("covers/a.jpg") or cover_url
-// ("https://site/storage/covers/a.jpg"): both end up on the backend address, over https.
+// (".../storage/covers/a.jpg"): both become "/files/covers/a.jpg".
 function coverOf(b: any): string | null {
-  if (b.cover_path) return STORAGE_URL + String(b.cover_path).replace(/^\/+/, "");
+  if (b.cover_path) return FILES_URL + String(b.cover_path).replace(/^\/+/, "");
 
   if (b.cover_url) {
     const url = String(b.cover_url);
     const i = url.indexOf("/storage/");
-    return i >= 0 ? STORAGE_URL + url.slice(i + "/storage/".length) : secure(url);
+    if (i >= 0) return FILES_URL + url.slice(i + "/storage/".length);
   }
 
   return null;

@@ -2,14 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   devIndicators: false,
-  images: {
-    remotePatterns: [
+  async rewrites() {
+    return [
       {
-        protocol: "http",
-        hostname: "bahrawy-planet.runasp.net",
-        pathname: "/storage/**",
+        source: "/files/:path*",
+        destination: "http://bahrawy-planet.runasp.net/api/files/:path*",
       },
-    ],
+    ];
   },
 };
 
